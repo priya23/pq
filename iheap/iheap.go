@@ -7,7 +7,7 @@ import (
 type Item struct {
 	Val      interface{}
 	Priority int
-	//	Index    int
+	Index    int
 }
 
 type PriorityQueue []*Item
@@ -25,9 +25,9 @@ func (pq PriorityQueue) Swap(i, j int) {
 
 //implementing default interface
 func (pq *PriorityQueue) Push(x interface{}) {
-	//	n := len(*pq)
+	n := len(*pq)
 	item := x.(*Item)
-	//	item.Index = n
+	item.Index = n
 	*pq = append(*pq, item)
 
 }
@@ -35,7 +35,7 @@ func (pq *PriorityQueue) Pop() interface{} {
 	old := *pq
 	n := len(old)
 	item := old[n-1]
-	//	item.Index = -1
+	item.Index = -1
 	*pq = old[0 : n-1]
 	return item
 }
