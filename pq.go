@@ -8,17 +8,13 @@ import (
 
 type PQ interface {
 	Push(k interface{})
-	Pop() rItem
+	Pop() interface{}
 }
 
 func NewQueue() PQ {
 	return iheap.CreateHeap()
 }
 
-func CreateNode(val string, priority int) interface{} {
+func CreateNode(val interface{}, priority int) interface{} {
 	return iheap.CreateNew(val, priority)
-}
-
-type Value interface {
-	Get() interface{}
 }

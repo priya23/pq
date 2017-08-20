@@ -40,7 +40,7 @@ func (pq *PriorityQueue) Pop() interface{} {
 	return item
 }
 
-func CreateNew(val string, priority int) *Item {
+func CreateNew(val interface{}, priority int) interface{} {
 	itt := Item{Val: val, Priority: priority}
 	return &itt
 }
