@@ -9,6 +9,7 @@ import (
 type PQ interface {
 	Push(k interface{})
 	Pop() interface{}
+	Update(interface{}, interface{}, int)
 }
 
 func NewQueue() PQ {

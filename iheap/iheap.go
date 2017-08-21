@@ -40,6 +40,13 @@ func (pq *PriorityQueue) Pop() interface{} {
 	return item
 }
 
+func (pq *PriorityQueue) Update(k interface{}, val interface{}, prior int) {
+	i := k.(*Item)
+	i.Val = val
+	i.Priority = prior
+	heap.Fix(pq, i.Index)
+}
+
 func CreateNew(val interface{}, priority int) interface{} {
 	itt := Item{Val: val, Priority: priority}
 	return &itt
